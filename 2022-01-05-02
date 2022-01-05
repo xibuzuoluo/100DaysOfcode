@@ -1,0 +1,58 @@
+/*------------------------------------------
+Bacteria are grouped according to fecundity
+--------------------------------------------*/
+#include <iostream>
+using namespace std;
+int main(){
+	int n; // N is the number of bacteria
+	// Id records the number of bacteria, rate records the reproductive rate of bacteria, 
+	// and the ith bacteria corresponds to ID [I] and Rate [I].
+	int id[100];
+	double rate[100];
+	
+	cin >> n;
+	for (int i = 0; i < n; i++){
+		int initial, final;
+		cin >> id[i] >> initial >> final;
+		rate[i] = (double)final / initial;
+	} 
+	
+// Sequence the entire bacteria
+for (int i = 0; i < n; i++){
+	for (int j = 0; j < n - i -1; j++){
+		if (rate[j+1] > rate[j]){
+			int tmpId = id[j];
+			id[j] = id[j+1];
+			id[j+1] = tmpId;
+			double tmpRate = rate[j];
+			rate[j] = rate[j+1];
+			rate[j+1] = tmpRate; 
+		}
+	}
+} 
+
+//Record the maximum difference
+double maxDiff = 0;
+//Record the subscript of the maximum difference
+int maxDiffIndex = 0;
+for(int i = 0; i < n-1; i++){
+	double diff = rate[i] - rate[i+1];
+	if (maxDiff < diff){
+		maxDiff = diff;
+		maxDiffIndex = i;
+	}
+} 
+
+//Export the group of bacteria with the highest reproduction rate
+cout << maxDiffIndex + 1 << endl;
+for (int i = maxDiffIndex; i >= 0; i--){
+	cout << id[i] << endl;
+} 
+
+//Export the group of bacteria with the lowest reproduction rate
+cout << n - maxDiffIndex - 1 << endl;
+for (int i = n - 1; i >= maxDiffIndex + 1; i--){
+	cout << id[i] << endl;
+} 
+return 0;
+}
