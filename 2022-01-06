@@ -1,0 +1,25 @@
+/*Worms eat apples*/
+
+#include<iostream>
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+   int n, x, y;
+   cin >> n >> x >> y;//Input three numbers, respectively: n represents the number of original frequency fruit; X is x hours per apple; Y is y hours
+   int eatNumber, rest;// EatNumber is the number of apples eaten; Rest is the number of apples left
+   eatNumber = y / x;
+   rest = n - eatNumber;
+   if ( eatNumber > n ){ 
+       cout << "error" << endl;}//If the number of apples consumed is larger than the original number, an error output is displayed.
+   if (y / x < n){
+   if ( y % x == 0 ){
+       rest = n - eatNumber; }
+       else if ( y % x != 0 ){
+           rest = n - eatNumber -1;}
+   cout << rest << endl;
+   }
+   return 0;  
+}
