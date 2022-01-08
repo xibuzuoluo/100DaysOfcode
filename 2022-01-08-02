@@ -1,0 +1,29 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main(){
+	int n;
+	cin >> n;
+	int HighOdd = 0;
+	int HighEven = 0;
+	int diff = 0;
+	for(int i=0; i<n; i++){
+		int Num[i];
+		int Odd[i];
+		int Even[i];
+		cin >> Num[i];
+		if ((Num[i])%2 == 0){
+		Even[i] = Num[i];
+		if(Even[i] > HighEven)
+		HighEven = Even[i];}
+		
+		else{
+		Odd[i] = Num[i];
+		if (Odd[i]>HighOdd)
+		HighOdd = Odd[i];}
+	diff = abs(HighEven - HighOdd);		
+				
+	} 
+	cout << diff;
+}
