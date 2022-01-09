@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int n,a,b;
+    cin>>n;
+    int i;
+    for ( i = 1; i <= 10 ; ++i) {
+        if ( i == 1){
+            a = n % 10; //First it prints the least significant number, the ones place
+        cout<<" "<<a;
+    }
+    n /= 10;  //Update the value of n, assuming a number 233,233/10 = 23, update the value of n to 23, then take the modulo (%10) to 3, and print. This repetition is okay。
+    b = n % 10;
+    if ( b != 0){
+        cout<<" "<<b;
+    } else{
+        break; //break  is a function of jumping out of the loop, although the loop condition is  i <= 10, but do not need so much, just to be able to output each bit of the number on the line.
+    }
+    }
+    return 0;
+}
