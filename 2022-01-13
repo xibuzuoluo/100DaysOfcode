@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+	int N=0,k=0;
+	int Num[100];
+	cin >> N;
+	cin >> k;
+	
+	
+	for(int i=0; i<N; i++){
+		cin >> Num[i];	
+	}
+	
+	for(int i=0; i<N; i++){
+		int temp=0;
+		for(int j=0; j<N; j++){
+			if(Num[j] > Num[i])
+			temp++;
+		}
+
+		if(temp == (k-1)){
+		cout << Num[i];
+		break;}
+	}
