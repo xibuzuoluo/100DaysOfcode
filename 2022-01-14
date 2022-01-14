@@ -1,0 +1,40 @@
+/**************************************************************
+
+Judge the best car and the correct expert.
+describe:
+Four experts comment on four cars
+A: The number two car is the best.
+B: The number four car is the best.
+C: The number three car is not the best.
+D: B is wrong.
+In fact, only one car was the best, and only one expert got it right and the other three got it wrong.
+Please program to output the best car number and the correct expert.
+
+*******************************************************************/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int best;
+	for(best = 1; best <= 4; best++){
+		// a b c d Record the words of four experts.
+		bool a = (best==2);
+		bool b = (best==4);
+		bool c = (best==3);
+		bool d = !b;
+		if (a+b+c+d != 1)
+			continue; //It doesn't meet the requirement that only one expert is right
+		cout << best << endl;  //Out put best car
+		// Output the expert whose judgment is correct
+		if ( a == 1)
+			cout << "A" << endl;
+		else if ( b == 1)
+			cout << "B" << endl;
+		else if ( c == 1)
+			cout << "C" << endl;
+		else 
+			cout << "D" << endl; 
+	}
+	return 0;
+}
