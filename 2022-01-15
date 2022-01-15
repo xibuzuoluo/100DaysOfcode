@@ -1,0 +1,17 @@
+/***********************
+Compare numbers and sum.
+************************/
+#include<iostream>
+using namespace std;
+
+int main(){
+	int a[10],sum=0;
+	for(int i=0; i<5; i++)
+	{
+		cin >> a[i];
+		if (a[i] > a[0])   //compare the number with the first one
+		sum += a[i]; 
+	}	
+	cout << sum;
+		
+}
