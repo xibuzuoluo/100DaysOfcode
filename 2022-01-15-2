@@ -1,0 +1,25 @@
+/***********
+Choose to use bike or walk.
+*************/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n;
+	cin >> n;
+	double B=0, W=0;
+	int Num[100];
+	for(int i=0; i<n; i++){
+		cin >> Num[i];
+	}
+	
+	for(int j=0; j<n; j++){
+		B = 27+23+Num[j]/3.0; //the time used by bike
+		W = Num[j]/1.2; // the time used on walk
+		if(B > W) cout << "Walk" << endl;
+		else cout << "Bike" << endl;
+		
+	}
+	
+}
