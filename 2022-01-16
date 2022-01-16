@@ -1,0 +1,31 @@
+/*********************************
+How many years needed to buy a house?
+A programmer's annual salary is $N,which doesn't change over time. 
+He wants to buy a house that is now worth $2 million, assuming the price increases
+by K percent a year. Calculate how many years it takeed to buy a house.
+Calculated and print the years needed, otherwise printed "Impossible". 
+*********************************/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main(){
+	int N=0;
+	double k=0.00;
+	cin >> N >> k;
+	for(int i=1;i<21;i++){
+	
+		if(N*i >= 200*pow((1+k/100),i-1)){
+
+			cout << i <<endl;
+			break;		
+						
+		}
+					
+		else if(i==20 && N*20 < 200*pow((1+k/100),20)){
+			cout << "Impossible" << endl;
+		}
+
+	}
+}
