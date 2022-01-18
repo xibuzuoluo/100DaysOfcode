@@ -1,0 +1,25 @@
+/*************************************************************
+An integer n is self-divisible if the sum of its digits yields 
+a number m that divisible exactly. For example,21,21%(2+1)==0, 
+so 21 is self-divisible. 
+Now find all self-divisible numbers between 10 and n(n < 100).
+**************************************************************/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	
+	int n;
+	cin >> n ;
+	int b=0,t=0,m=0;
+	
+	for(int i=10; i<=n; i++){
+		b = i/10;
+		t = i%10;
+		m = b+t;
+		if(i%m==0)
+		cout << i << endl;		
+	}
+	
+}
