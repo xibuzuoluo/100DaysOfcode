@@ -1,0 +1,33 @@
+/*********************************
+Compare string sizes ignoring case.
+*********************************/
+#include<iostream>
+using namespace std;
+#include<string.h>
+
+int main(){
+	char s1[100];
+	char s2[100];
+	int s_l=0, s1_l=0, s2_l=0;
+	gets(s1);
+	gets(s2);
+	s1_l = strlen(s1);
+	s2_l = strlen(s2);
+	if(s1_l < s2_l) s_l = s2_l;
+	else s_l = s1_l;
+	
+	for(int i=0; i<s_l; i++){
+		if(s1[i] > s2[i]){
+			cout << "s1 is big at " << ' ' << s1[i] << endl;
+			break;
+		}
+		else if(s1[i] < s2[i]){
+			cout << "s2 is big at " << ' ' << s2[i] << endl;
+			break;
+		}
+		else if(s1[s_l -1] == s2[s_l -1]){
+			cout << "s1 is equl to s2." << endl;
+			break;
+		}		
+	}
+}
