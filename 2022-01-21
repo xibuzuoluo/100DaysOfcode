@@ -1,0 +1,45 @@
+/************************************************
+     Count the longest word in the sentence.
+*************************************************/
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main()
+{
+	int len=0,i;
+	char s[500]; //Define an array
+	char word[20]={0}; //Hold every word 
+	char maxword[20]={0}; //The longest word 
+	int num=0; //the number of letters in every word.
+	int maxnum=0; //Maximum number of letters per word
+
+	do{	
+		cout<<"Please enter an English sentence separated by a space and ending with '. '\
+(less than 500 words in length):"<<endl;
+		gets(s);
+		len=strlen(s);
+		
+	}while(len>500||s[len-1]!='.'); //Input validity check	
+
+	
+	for(i=0;i<len;i++)
+	{
+		if(s[i]==' '||s[i]=='.')
+		{
+		if(maxnum<num) //Compare the size
+		{
+			maxnum=num;
+			strcpy(maxword,word);
+		}
+			num=0;
+		}
+		else
+		{ 
+		word[num]=s[i]; //Put each word in the array
+		num++ ;
+		}			
+	}	
+		cout<<maxword;
+	return 0;
+}
