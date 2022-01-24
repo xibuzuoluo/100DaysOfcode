@@ -1,0 +1,40 @@
+/********************************************
+Shift the numbers in a string.
+*********************************************/
+#include<iostream>
+using namespace std;
+
+int main(){
+	int m=0,n=0;
+	cin >> m  >>n;
+	int tem1[n];
+	int tem2[m-n];
+	int a[m];
+	for(int i=0;i<m;i++){
+		cin >> a[i];
+	}	
+
+	// use tem1 to store a[m-n] to a[m-1];
+	for(int i=m-n;i<m;i++){
+		tem1[i+n-m] = a[i];
+	}
+	
+	// use tem2 to store a[0] to a[m-n-1];
+	for(int i=0;i<m-n;i++){
+		tem2[i] = a[i];
+	}	
+	
+	// put tem1 into a[0]~a[n-1]
+	for(int i=0;i<n;i++){
+		a[i] = tem1[i];
+	}	
+	
+	// put tem2 into a[n]~a[m-1]
+	for(int i=n;i<m;i++){
+			a[i] = tem2[i-n];
+		}
+	
+	for(int i=0;i<m;i++){
+		cout << a[i] << ' ' ;
+	}
+}
