@@ -1,0 +1,39 @@
+/***************************************
+Sort the numbers and find the middle one.
+****************************************/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int m=0, temp=0;
+	cin >> m;
+	int  a[m];
+	for (int i=0; i<m; i++){
+		cin >> a[i];
+	}
+	
+	// sort the numbers	
+	for(int i=0; i<m; i++)
+	{	
+	for(int j=0; j<m; j++){
+	if(a[i] < a[j]){
+		temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;		
+			}
+		}
+	}
+	
+	for( int i=0; i<m; i++){
+		cout << a[i] << " ";
+	}
+
+	// find the middle one if the number of the numbers is even or odd one.
+	if (m%2==0){
+		int ave =  ((a[m/2-1] + a[m/2])/2);
+		cout << ave;
+	}	
+	else
+		cout << a[(m-1)/2];
+}
