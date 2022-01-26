@@ -1,0 +1,35 @@
+/****************************************
+The tree outside the school gate.
+There is a row of trees on the road with a distance of L at the gate of a school. 
+The distance between two adjacent trees is 1 meter. We can view the road as a number line, 
+where one end of the road is at 0 and the other end is at L; Every integer point on the number line, 0,1,2... L, both have a tree.
+
+There are areas of the road that will be used for the subway, and these areas are 
+represented by their starting and ending points on the number line. Given that the coordinates 
+of the starting and ending points of any region are integers, there may be some overlap between the regions. 
+Now you want to remove the trees in these regions, including the two trees at the end of the region. 
+Your task is to calculate how many trees will remain on the road after you remove them all.
+*****************************************/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a[10001];
+int x,y,m,n,s=0;
+cin>>x>>y;
+for(int i=1;i<=y;i++)
+{
+cin>>m>>n;//m n为区间
+for(int j=m;j<=n;j++)
+{
+a[j]=1;
+}
+}
+for(int i=0;i<=x;i++)
+{
+if(!a[i]) s++;
+}
+cout<<s;
+return 0;
+}
