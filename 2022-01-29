@@ -1,0 +1,30 @@
+/******************************************************************************
+Given a set of points (x,y), find the distance between the two farthest points.
+*******************************************************************************/
+#include<iostream>
+#include<math.h>
+#include <iomanip>
+using namespace std;
+
+int main(){
+	int m=0;
+	cin >> m;
+	double d=0.00, dest=0.00;
+	double a[m][2];
+	for(int i=0; i<m; i++){
+		for(int j=0; j<2; j++){
+			cin >> a[i][j];
+		}
+	}
+	
+	for(int i1=0; i1<m; i1++){		
+		for(int i2=0; i2<m; i2++){		
+			d = pow((pow(a[i1][0] - a[i2][0], 2)+ pow((a[i1][1]) - a[i2][1],2)),0.5);
+			if(dest < d)
+			dest = d;		
+		}					
+	}
+	
+	cout << dest << endl;
+	cout << fixed << setprecision(4) << dest << endl;	
+}
