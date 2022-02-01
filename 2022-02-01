@@ -1,0 +1,24 @@
+/**********************************************************************
+Find out if an element in a given array satisfies the relation x[i]=i.
+***********************************************************************/
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n=0;
+	cin >> n;
+	int list[n];
+	for(int i=0; i<n; i++){
+		cin >> list[i];
+	}
+	
+	for(int i=0; i<n; i++){
+		if(list[i] == i){
+			cout << i << " " << list[i] << endl;
+			break;
+		}
+		if(i==2
+		)
+			cout << "N" << endl;
+	}
+}
