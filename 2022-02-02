@@ -1,0 +1,36 @@
+/***************************************************************
+Sort the four big fresh water lakes in China.
+
+A said: Dongting Lake is the largest, Hongze Lake is the smallest and Poyang Lake is the third.
+B: Hongze Lake is the largest, Dongting Lake is the smallest, Poyang Lake is the second and Taihu Lake is the third.
+C: Hongze Lake is the smallest, and Dongting Lake is the third.
+D: Poyang Lake is the largest, Taihu Lake is the smallest, Hongze Lake is the second and Dongting Lake is the third.
+
+Given that the four lakes are not of equal size, each of the four people can only answer one correctly,
+Please program the size ranking of Poyang Lake, Dongting Lake, Taihu Lake and Hongze Lake in order.
+****************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int d, h, p, t;  
+    for(d=1; d<=4; d++) {
+        for(h=1; h<=4; h++) {
+            for(p=1; p<=4; p++) {
+                for(t=1; t<=4; t++) {
+                    if((d!=h && d!=p && d!=t && h!=p && h!=t && p!=t)
+                       &&((d==1)+(h==4)+(p==3)==1)
+                       &&((h==1)+(d==4)+(p==2)+(t==3)==1)
+                       &&((h==4)+(d==3)==1)
+                       &&((p==1)+(t==4)+(h==2)+(d==3)==1)
+                       &&((d+h+p+t)==10)) {
+                    	cout << d << " " << h << " " << p << " " << t << endl;
+                    	return 0;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
