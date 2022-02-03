@@ -1,0 +1,43 @@
+/*********************************************************************
+Invoice statistics
+Two arrays, the first is the person ID of the invoice and its amount, 
+there are three people, the amount is single precision floating point
+The second is the type and amount of the invoice. 
+There are three types of invoice, and the amount is single precision floating point
+**********************************************************************/
+
+#include<iostream>;
+#include<iomanip>;
+using namespace std;
+ 
+int main() {
+	float m[3][3] = { 0 };
+	// To be clear: use an array +for loop for storage
+	// The array boundary is fixed: 3×3
+	int ID, n;
+	for (int i = 0; i < 3; i++) {
+		cin >> ID >> n;
+		for (int i = 0; i < n; i++) {
+			char type;
+			float price;
+			cin >> type >> price;
+			switch (type) {
+				case 'A':m[ID - 1][0] += price; break;
+				case 'B':m[ID - 1][1] += price; break;
+				case 'C':m[ID - 1][2] += price; break;
+				default:break;
+			}
+ 
+		}	
+			
+	}
+	for (int i = 0; i < 3; i++) {
+		cout << i + 1 << ' ';
+		cout << fixed << setprecision(2) << m[i][0] + m[i][1] + m[i][2] << endl;
+	}
+	for (int i = 0; i < 3; i++) {
+		cout << char(i + 65) << ' ';
+		cout << fixed << setprecision(2) << m[0][i] + m[1][i] + m[2][i] << endl;
+	}
+	return 0;
+}
