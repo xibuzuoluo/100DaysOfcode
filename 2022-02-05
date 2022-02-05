@@ -1,0 +1,46 @@
+/*****************************************************
+Bacterial experimental group.
+"Didn't do it very well."
+******************************************************/
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n=0, a=0, b=0, temp=0, temp_a=0, temp_b=0;
+	cin >> n;
+	int P[n][3];
+	int a_p[n], b_p[n];	
+	for(int i=1; i<n+1; i++){
+		for(int j=0; j<3; j++){
+			cin >> P[i][j];
+		}
+	}
+	
+	for(int i=1; i<n+1; i++){	
+			a_p[i]=0;
+			b_p[i]=0;
+		}
+	
+	for(int i=1; i<n+1; i++){
+		if(P[i][2] / P[i][1] > 100){
+			a++;
+			a_p[i] = i;
+		}
+		else{
+			b++;
+			b_p[i] = i;
+		}			
+	}
+	
+	cout << a << endl;	
+	for(int i=1; i<n+1; i++){
+		if(a_p[i] > 0)
+		cout << a_p[i] << endl;
+	}
+	
+	cout << b << endl;	
+	for(int i=1; i<n+1; i++){
+		if(b_p[i] > 0)
+		cout << b_p[i] << endl;
+	}	
+}
