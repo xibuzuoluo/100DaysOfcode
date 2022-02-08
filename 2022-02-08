@@ -1,0 +1,45 @@
+/****************************************************************
+Collatz conjecture.
+Input a number n.
+If n is odd, f(n)=n*3+1
+If n is even, f(n)=n/2
+If n==1, ends and exits the loop
+If n<1, fails and exits the loop
+*****************************************************************/
+#include<iostream>
+using namespace std;
+
+int recur(int n)
+{
+	if(n<1)
+	{
+		cout << "You should input a number n >= 1." << endl;
+		return 0;
+	}
+	else if(n == 1)
+	{
+		cout << "End!" << endl;
+		return 0;
+	}
+	else if(n%2 !=0){
+		cout << n << "*3+1=";
+		n = n*3+1;
+		cout <<  n << endl;
+	}
+	else
+	{
+		cout << n << "/2=";
+		n = n/2;
+		cout << n << endl;
+	}
+	recur(n);
+	return	0;
+}
+
+int main()
+{
+	int c=0;
+	cin >> c;
+	recur(c);
+	
+}
