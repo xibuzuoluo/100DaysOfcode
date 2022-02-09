@@ -1,0 +1,45 @@
+/*******************************************************************************
+Queuing game.
+Arrange the same number of  boys and girls in a queue, and each child is 
+given a number according to its position in the queue.
+The boy standing in front of him can leave the queue hand in hand with the 
+adjacent girl behind him. The remaining children stand together again, 
+and then press the adjacent little boys and girls to leave the queue hand in hand. 
+The game goes back and forth. It just ensures that two children can leave the queue 
+hand in hand every time, and the last two children to leave are the two children 
+with the smallest number and the largest number.
+******************************************************************************/
+#include<iostream>
+using namespace std;
+
+int recur(int a[], int n){
+	
+	cout << a[n/2-1] << " " << a[n/2] << endl;
+	
+	if(n==2){
+			return 0;
+	}
+		
+	for(int i=n/2-1;i<n-2;i++){
+		a[i] = a[i+2];		
+	}
+	recur(a, n-2);
+	return 0;	
+}
+
+int main(){
+	int n;
+	cin >> n;
+	if(n % 2 !=0){
+		cout << "Please input an even number" << endl;
+		return 0;
+	}
+		
+	int a[n];
+	for(int i=0; i<n; i++){
+		cin >> a[i];
+	}
+	
+	recur(a, n);
+	return 0;	
+}
