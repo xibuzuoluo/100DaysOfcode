@@ -1,0 +1,62 @@
+/**********************************************************
+Extension matching problem.
+Output "$" and "?" Indicates that the corresponding left 
+and right parentheses cannot match.
+***********************************************************/ 
+
+#include<iostream>
+using namespace std;
+
+int recur(char a[], int n)
+{
+    char b[101];
+    int stack[101];
+    int top=0;
+      for(int i=0;i<n;i++)
+        {
+            if(a[i]=='(')
+            {
+                top++;
+                stack[top]=i;
+                b[i]=' ';
+            }
+            else if(a[i]==')')
+            {
+                if(top!=0)
+                {
+                    top--;
+                    b[i]=' ';
+                }
+                else
+                    b[i]='?';
+            }
+            else
+                b[i]=' ';
+        }
+        while(top)
+        {
+            b[stack[top]]='$';
+            top--;
+        }
+        b[n]='\0';
+
+        cout<<b<<endl;
+
+//	recur( a,  n-2);
+	return 0;
+}
+
+int main(){
+	int n=0;
+	cin >> n ;		
+	cin.get();  //Add "cin.get()" after "cin ", "cin.get()" will consume the extra carriage return characters in the buffer.
+				//Otherwise, the follow "cin.getline" may get the carriage return, and do nothing more.
+	char a[n];
+	cin.getline(a,n);
+	cout << a << endl;
+//	cout << a[2] << "wo" << endl;
+//	cout << "nihao" << endl;
+	recur(a,n);
+	return 0;
+	
+} 
