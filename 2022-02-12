@@ -1,0 +1,23 @@
+/*********************************************
+Put m identical apples on n identical plates, 
+and allow the plates to remain empty.
+How many methods are there?
+**********************************************/
+#include<iostream>
+using namespace std;
+
+int count(int m, int n){
+	if(m <= 1 || n <= 0)
+		return 1;
+	if(m < n)
+		return count(m,m);
+	else
+		return count(m,n-1) + count(m-n,n);
+}
+
+int main(){
+	int apples, plates;
+	cout << "Input the number of apples and plates: " << endl;
+	cin >> apples >> plates;
+	cout << count(apples, plates);
+}
