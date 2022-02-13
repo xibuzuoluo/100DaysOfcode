@@ -1,0 +1,25 @@
+/*****************************************************************
+Tower of Hanoi.
+******************************************************************/
+#include<iostream>
+using namespace std;
+
+void move(int m, char x, char y, char z){
+	if(m == 1){
+		cout << "Move a plate from " << x << " to " << z << endl;
+	}
+	else{
+		move(m-1, x, z, y);
+		cout << "Move a plate from " << x << " to " << z << endl;
+		move(m-1, y, x, z); 
+	}
+}
+
+int main(){
+	int n;
+	cout << "Please input the number of the plates n = ";
+	cin >> n;
+	cout << "Move " << n << " plates in 3 columns follow these steps: " << endl;
+	move(n, 'A', 'B', 'C');
+	return 0;
+}
