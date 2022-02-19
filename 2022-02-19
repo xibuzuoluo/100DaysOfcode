@@ -1,0 +1,18 @@
+/******************************
+Use pointer to return value.
+*******************************/
+#include<iostream>
+using namespace std;
+
+int *getInt(){
+	int value;
+	cin >> value;
+	return &value;	
+}
+
+int main(){
+	int *p;
+	p = getInt();
+	cout << *p << endl;
+	return 0;
+}
