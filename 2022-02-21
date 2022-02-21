@@ -1,0 +1,21 @@
+/****************************
+Struct using in C++.
+*****************************/
+#include<iostream>
+using namespace std;
+
+struct student
+{
+	int id_num;
+	char name[10];
+};
+
+int main(){
+	student jok = {250, {'j','o','k','\0'}};
+	jok.id_num = 20210000 + jok.id_num;
+	for(int i=0; jok.name[i] != '\0';i++){
+		jok.name[i] = toupper(jok.name[i]);		
+	}
+	cout << jok.id_num << " " << jok.name << endl;
+	return 0;
+}
