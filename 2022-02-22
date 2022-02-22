@@ -1,0 +1,17 @@
+/***********************************
+Pointer to structure.
+************************************/
+#include<iostream>
+using namespace std;
+struct student
+{
+	int id_num;
+	char name[10];
+};
+
+int main(){
+	student jok = {1234,{'j','o','k','\0'}};
+	student *one = &jok;
+	cout << (*one).id_num << " " << (*one).name;
+	return 0;
+}
