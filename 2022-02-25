@@ -1,0 +1,35 @@
+/*************************************************
+Simple application of overloading in C++.
+**************************************************/
+#include<iostream>
+using namespace std;
+
+int max(int x, int y){
+	if(x>y)
+		cout << x << endl;
+	else
+		cout << y << endl;
+}
+
+float max(float x, float y){
+	if(x>y)
+		cout << x << endl;
+	else
+		cout << y << endl;
+}
+
+int main(){
+	int a1=0,b1=0;
+	float a2=0.00,b2=0.00;
+	cout << "Input 2 integral numbers: " <<endl;
+	cin >> a1 >> b1;
+	cout << "The bigger one is: "; 
+	max(a1,b1);
+	cout << endl;
+	cout << "Input 2 float numbers: " <<endl;
+	cin >> a2 >> b2;
+	cout << "The bigger one is: "; 
+	max(a2,b2);
+	cout << endl;
+	
+}
