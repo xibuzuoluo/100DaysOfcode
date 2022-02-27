@@ -1,0 +1,37 @@
+/********************************************
+Application of data abstraction.
+*********************************************/
+#include<iostream>
+using namespace std;
+
+class Adder{
+	public:
+		Adder(int i = 0)
+		{
+			total = i;
+		}
+		void addNum(int number)
+		{
+			total += number;
+		}
+		int getTotal()
+		{
+			return total;
+		};
+	private:
+		int total;
+};
+
+int main(){
+	Adder a;
+	int n1=0, n2=0, n3=0;
+	cout << "Input the number n1, n2 and n3: " << endl;
+	cin >> n1 >> n2 >> n3;
+	
+	a.addNum(n1);
+	a.addNum(n2);
+	a.addNum(n3);
+	
+	cout << "Total " << a.getTotal() << endl;
+	return 0;
+}
