@@ -1,0 +1,23 @@
+/*************************************
+Namespace instance.
+**************************************/
+#include<iostream>
+using namespace std;
+
+namespace first_space{
+	void func(){
+		cout << "Inside first_space " << endl;
+	}
+}
+
+namespace seconde_space{
+	void func(){
+		cout << "Inside second_space " << endl;
+	}
+}
+
+int main(){
+	first_space::func();
+	seconde_space::func();
+	return 0;
+}
