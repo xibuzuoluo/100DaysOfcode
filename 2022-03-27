@@ -1,0 +1,37 @@
+/************************************************************************
+Three people were bigger than their meals, and each said two words.
+A said: B eats more than I do, and C eats as much as I do.
+B said: a eats more than I, and a eats more than C.
+C said: I eat more than B, and B eats more than a.
+In fact, people who eat less say more right. Please program to output 
+the order of 3 people according to the size of the meal.
+**************************************************************************/
+#include <iostream>
+using namespace std;
+
+int main(){
+	int A, B, C;
+	int sumA, sumB, sumC;
+	for(A=1; A<=3; A++)
+		for(B=1; B<=3; B++)
+			for(C=1; C<=3; C++)
+			{
+				
+				sumA = (A<B) + (C==A);
+				sumB = (A>B) + (A>C);
+				sumC = (C>B) + (B>A);
+				if ((A > B) && (B>C) && (sumA < sumB) && (sumB < sumC))
+					cout << "The person sort by their capability of eat are: A,B,C" << endl;
+				if ((A > C) && (C>B) && (sumA < sumC) && (sumC < sumB))
+					cout << "The person sort by their capability of eat are: A,C,B" << endl;
+				if ((B > A) && (A>C) && (sumB < sumA) && (sumA < sumC))
+					cout << "The person sort by their capability of eat are: B,A,C" << endl;
+				if ((B > C) && (C>A) && (sumB < sumC) && (sumC < sumA))
+					cout << "The person sort by their capability of eat are: B,C,A" << endl;
+				if ((C > A) && (A>B) && (sumC < sumA) && (sumA < sumB))
+					cout << "The person sort by their capability of eat are: C,A,B" << endl;
+				if ((C > B) && (B>A) && (sumC < sumB) && (sumB < sumA))
+					cout << "The person sort by their capability of eat are: C,B,A" << endl;
+			}
+	return 0;
+}
