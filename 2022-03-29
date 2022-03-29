@@ -1,0 +1,25 @@
+/****************************************************************
+For a decimal natural number, its hexadecimal and 9-system 
+representations are both three-digit numbers, and the three-digit 
+representation order of hexadecimal and 9-system numbers is exactly 
+the opposite. Programming to find this natural number, 
+and output display.
+*****************************************************************/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int i;
+	for(i = 65;i <=342; i++)
+	{
+		if((i%9 == i /49) && (i/81==i%7))
+		{
+			cout << i << endl;
+			cout << i / 49 << i /7 % 7 << i%7 << endl;
+			cout << i/81 << i/9%9 << i%9 << endl;
+			break;
+		}
+	}
+	return 0;
+}
