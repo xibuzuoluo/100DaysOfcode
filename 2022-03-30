@@ -1,0 +1,32 @@
+/*************************************************************************
+An equation like A3 = B3 + C3 + D3 is called the perfect cubic equation. 
+For example, 123 = 63 + 83 + 103. Write a program to find all quads 
+(a, B, C, d) for any given positive integer n (n ≤ 100), so that 
+A3 = B3 + C3 + D3, where a, B, C, D is greater than 1, 
+less than or equal to N, and B < = C < = D.
+***************************************************************************/
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n, a, b, c, d;
+	cin >> n;
+	for(int a=2; a<=n; a++)
+	{
+		for(int b=1; b<=a-1; b++)
+		{
+			for(int c=b; c<=a-1; c++)
+			{
+				for(int d=c; d<=a-1; d++)
+				{
+					if(a*a*a == b*b*b + c*c*c + d*d*d)
+					{
+						cout << "Cube =" << a << ", Tirple( " << b << "," << c << "," << d << ")" << endl;
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
