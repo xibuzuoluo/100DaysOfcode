@@ -1,0 +1,28 @@
+/*********************************
+Filter extra spaces.
+**********************************/
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int len=0, i;
+	string s;
+	getline(cin, s);
+	for(i=0; i<s.size(); i++)
+	{
+		if(s[i]==' ')
+		{
+			if(len == 0)
+				cout << " ";
+				len++;
+		}
+		else
+		{
+			cout << s[i];
+			len = 0;
+		}
+	}
+	cout << endl;
+	return 0;
+}
