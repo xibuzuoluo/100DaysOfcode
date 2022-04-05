@@ -1,0 +1,43 @@
+/******************************************
+String maximum span.
+*******************************************/
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+	char ch[321];
+	const char* comma = ",";
+	cin >> ch;
+	char* ch1 = strtok(ch, comma);
+	char* ch2 = strtok(NULL, comma);
+	char* ch3 = strtok(NULL, comma);
+	
+	char* pch = strstr(ch1, ch2);
+	char* pchlast = strstr(ch1, ch2);
+	int i = 0;
+	if(!pch || !pchlast) 
+		{
+			cout << "-1"; 
+			return 0;
+		}
+	else
+	{
+		i = pchlast - pch -strlen(ch2);
+	}
+	while(pchlast)
+	{
+		pchlast = strstr(pchlast + 1, ch3);
+		if(pchlast){
+			i = pchlast - pch - strlen(ch2);
+		}		
+	}
+	if(i<0)
+	{
+		i = -1;
+	}
+	cout << i;
+	return 0;
+ } 
