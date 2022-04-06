@@ -1,0 +1,29 @@
+/********************************************************
+Find the roots of an equation using the bisection method.
+*********************************************************/
+#include <iostream>
+#include <math.h>
+using namespace std;
+#define EPS 1e-6
+
+double f(double x) { return x*x*x -5*x*x + 10*x-1;}
+
+int main()
+{
+	double left = 0, right = 100;
+	double mid = left + (right - left)/2;
+	double y = f(mid);
+	int times = 1;
+	while(fabs(y) > EPS)
+	{
+		if(y<0)
+			left = mid;
+		else
+			right = mid;
+		mid = left + (right - left)/2;
+		y= f(mid);
+		times++;		
+	}
+	cout << "time:" << times << "\t answer: " << mid << endl;
+	return 0;
+}
