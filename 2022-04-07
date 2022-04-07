@@ -1,0 +1,27 @@
+/**********************************
+String Substring Replacement.
+***********************************/
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main(){
+	string s;
+	string s1 = "apple";
+	string s2 = "peach";
+	int l1 = s1.length();
+	int l2 = s2.length();
+	getline(cin, s);
+	int i=0;
+	while(1){
+		string::size_type pos1 = s.find(s1,i);
+		string::size_type pos2 = s.find(s2,i);
+		if(pos1 == pos2)
+			break;
+		int length = pos1<pos2?l2:l1;
+		s.replace(min(pos1,pos2),length,pos1<pos2?s2:s1);
+		i=min(pos1,pos2) + length;
+	}
+	cout << s << endl;
+	return 0;
+} 
