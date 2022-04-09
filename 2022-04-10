@@ -1,0 +1,33 @@
+/************************************************
+Traversing a two-dimensional array from 
+top right to bottom left.
+*************************************************/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int A[100][100];
+	int row, col, i, j, r=0, c=0;
+	cin >> row >> col;
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			cin >> A[i][j];
+		}
+	}
+	for(int j=0;j<col;j++){
+		r = 0;
+		c = j;
+		while(r<row && c>=0){
+			cout << A[r++][c--] << endl;
+		}
+	
+	}
+	for(i=1; i<row; i++){
+			r = 1;
+			c = col-1;
+			while(r<row && c>=0)
+				cout << A[r++][c--]<< endl;
+	}
+	return 0;
+}
