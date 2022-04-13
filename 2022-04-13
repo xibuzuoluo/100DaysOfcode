@@ -1,0 +1,30 @@
+/********************************************
+longest consecutive character in a string.
+*********************************************/
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+char a[300];
+int main()
+{
+	cin >> a;
+	int len = strlen(a);
+	int num = 1;
+	int max = 0;
+	char maxc;
+	for(int i=0; i<len; ++i)
+	{
+		if(a[i]==a[i+1])
+			num ++;
+		else {
+		if(num>max){
+			max = num;
+			maxc = a[i];
+			}
+		
+			num = 1;
+		}
+	}
+	cout << maxc << " " << max;
+}
