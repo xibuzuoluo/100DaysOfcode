@@ -1,0 +1,21 @@
+/******************************
+Picking stones game.
+*******************************/
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b;
+	double s5 = sqrt(5.0);
+	while(cin >> a >> b){
+		int c = abs(a-b);
+		if(a>b) a=b;
+		if(a==(int)(c*(s5+1)/2.0))
+			cout << 0 << endl;
+		else 
+			cout << 1 << endl;
+	}
+	return 0;
+}
