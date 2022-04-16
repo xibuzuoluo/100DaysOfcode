@@ -1,0 +1,26 @@
+/******************************
+Elephant drinking water
+*******************************/
+
+#include <iomanip>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	double h, r, v;
+	int n;
+	cin >> h >> r;
+	v = r*r*3.14*h;
+	n = int (2000/v);
+	if(20000/v > 0){
+		n++;
+		cout << n;
+	}
+	else
+	{
+		cout << n;
+	}
+	return 0;
+}
