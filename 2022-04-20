@@ -1,0 +1,35 @@
+/*******************************
+Germ war.
+********************************/
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+#include <stack>
+#include <queue>
+#define MAXA 10000
+typedef long long LL;
+using namespace std;
+int n,bad,good;
+int main()
+{
+	cin >> n;
+	while(n--)
+	{
+		cin >> bad >> good;
+		int hour = 0;
+		while(bad > 0)
+		{
+			bad -= good;
+			bad = bad << 1;
+			good *= 1.05;
+			hour++;
+			if(bad > 1000000)
+				bad = 1000000;
+		}
+		cout << hour << endl;
+	}
+}
